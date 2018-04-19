@@ -37,7 +37,7 @@ nav ul li {
 }
 nav ul li.signUp {
   color: #fff;
-  background-color: #CB3438;
+  background-color: rgb(164, 60, 64);
 }
 nav ul li a,
 nav ul li a:visited {
@@ -53,6 +53,10 @@ nav ul li a:hover,
 nav ul li a:visited:hover {
   background: #CB3438;
   color: #fff;
+}
+nav ul li a:hover,
+nav ul li a.signUp:visited:hover {
+  background:  #CB3438;
 }
 nav ul li a:not(:only-child):after,
 nav ul li a:visited:not(:only-child):after {
