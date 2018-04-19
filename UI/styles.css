@@ -14,8 +14,9 @@ body, input[text], button {
   color: #888;
   font-family: Cambria, Georgia;
 }
-input {
+input, textarea, select, button {
   height: 2em;
+  width: 80%;
   font-size: 1em;
   padding-left: .4em;
 }
@@ -39,6 +40,7 @@ input {
 .col-1-4,
 .col-1-2 {
   width: 100%;
+  padding-top: 15px;
 }
 
 /*
@@ -56,20 +58,43 @@ input {
   /* border: 1px solid red; */
   padding-top: 10px;
   z-index: -1;
-  opacity: .85;
+  opacity: 1;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.main_title
+{
+  font-family: 'Brandon', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 15px;
+  text-shadow: #CB3438;
+  color: #fff;
+  margin-bottom: 11px;
+  position: relative;
+}
+.main_tagline
+{
+  font-family: 'Brandon', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 10px;
+  color: #fff;
+  margin-bottom: 11px;  
+}
+.title_container
+{
+  padding-top: 80px;
+}
 img {
   max-width: 100%;
   height: auto;
 }
 
 h1 {
-  color: #369;
+  color: #444;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
@@ -168,7 +193,7 @@ nav a.active {
   clear: both;
   position: relative;
   z-index: 10;
-  height: 3em;
+  height: 100%;
   margin-top: -3em;
 }
 /* 
@@ -218,11 +243,31 @@ nav a.active {
     /* border: 1px solid red; */
     padding-top: 10px;
     z-index: -1;
-    opacity: .85;
+    opacity: 1;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .main_title
+  {
+    font-family: 'Brandon', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 35px;
+    text-shadow: #CB3438;
+    color: #fff;
+    margin-bottom: 11px;
+    position: relative;
+  }
+  .main_tagline
+  {
+    font-family: 'Brandon', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 11px;  
   }
 }
 
@@ -295,4 +340,29 @@ nav a.active {
   padding: 2px 16px;
   background-color: white;
   color: white;
+}
+
+.card {
+  background: #fff;
+  padding: 10px;
+  /* border-top: 3px solid #CB3438; */
+  border-top: 1px solid;
+  box-shadow: 0 2px 6px 0 hsla(0,0%,0%,0.2);
+  border-radius: 5px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

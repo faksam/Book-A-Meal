@@ -3,22 +3,195 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Book-A-Meal</title>
+    <title>Order For Your Meal From World Class Caterer's - Book-A-Meal</title>
     <meta name="author" content="Fakunle Samuel">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Import css-->
     <link type="text/css" rel="stylesheet" href="./styles.css" />
+    <link type="text/css" rel="stylesheet" href="./navigation.css" />
 </head>
 
 <body>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <section class="navigation">
+                    <div class="nav-container">
+                        <div class="brand">
+                            <a href="./index.html">
+                                <img src="./assets/caterer006.png" style="height: 50px; float: left;" alt="Logo"> Book-A-Meal</a>
+                        </div>
+                        <nav>
+                            <div class="nav-mobile">
+                                <a id="nav-toggle" href="#!">
+                                    <span></span>
+                                </a>
+                            </div>
+                            <ul class="nav-list">
+                                <li>
+                                    <a href="./reportpage.html">Daily Report</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Account</a>
+                                    <ul class="nav-dropdown">
+                                        <li>
+                                            <a href="./menupage.html">My Menu's</a>
+                                        </li>
+                                        <li>
+                                            <a href="./caterer_account.html">My Account</a>
+                                        </li>
+                                        <li>
+                                            <a href="./index.html">Sign Out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+            </div>
 
+            <div class="row">
+                <div class="col col-2-3">
+                    <h2> The summary of the orders for a specific day. </h2>
+                    <div class="row">
+                        <div class="input col-1">
+                            <p>Pick Date:</p>
+                            <input id="order_day" name="order_day" type="date">
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <div class="row">
+                        <table>
+                            <tr>
+                                <th>Date</th>
+                                <th>Meal</th>
+                                <th>Price</th>
+                            </tr>
+                            <tr>
+                                <td>18-04-2018</td>
+                                <td>Bread &amp; Tea</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>18-04-2018</td>
+                                <td>Jollof Rice</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>18-04-2018</td>
+                                <td>Amala and ewedu</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td>17-04-2018</td>
+                                <td>Bread &amp; Tea</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>17-04-2018</td>
+                                <td>Chicken and chips</td>
+                                <td>1200</td>
+                            </tr>
+                            <tr>
+                                <td>17-04-2018</td>
+                                <td>Fruits</td>
+                                <td>400</td>
+                            </tr>
+                            <tr>
+                                <td>16-04-2018</td>
+                                <td>Francisco Food </td>
+                                <td>2500</td>
+                            </tr>
+                            <tr>
+                                <td>13-04-2018</td>
+                                <td>Bread &amp; Tea</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>13-04-2018</td>
+                                <td>Semo and egusi, with chicken</td>
+                                <td>1200</td>
+                            </tr>
+                            <tr>
+                                <td>13-04-2018</td>
+                                <td>Fried rice and chicken</td>
+                                <td>1500</td>
+                            </tr>
+                            <tr>
+                                <td>12-04-2018</td>
+                                <td>Bread &amp; Tea</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>12-04-2018</td>
+                                <td>Semo and egusi</td>
+                                <td>800</td>
+                            </tr>
+                            <tr>
+                                <td>12-04-2018</td>
+                                <td>Fufu and egusi soup</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td>11-04-2018</td>
+                                <td>Fried rice and chicken</td>
+                                <td>1200</td>
+                            </tr>
+                            <tr>
+                                <td>11-04-2018</td>
+                                <td>Rice and beans</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <th>Total Amount:</th>
+                                <td colspan="2">120,000</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-1">
+                    <!-- The details for all the orders. -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-1">
+                    <!-- The amount of money made by end of day. -->
+                    <h2>Total Amount: 120,000</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+
+    </div>
+
+    <br><br>
 
     <!--Import jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Import js scripts-->
+    <script>
+        
+    </script>
     <script type="text/javascript" src="./scripts.js"> </script>
 </body>
 
 </html>
+<!-- 
+    A page where the caterer can see
+1. The summary of the orders for a specific day.
+2. The details for all the orders .
+3. The amount of money made by end of day
+ -->
