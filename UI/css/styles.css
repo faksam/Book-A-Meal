@@ -51,7 +51,7 @@ input, textarea, select, button {
 */
 
 .wall {
-  background-image: url("./assets//caterer.jpg");
+  background-image: url("../assets/caterer.jpg");
   width: 100%;
   height: 250px;
   background-size: 100% 200px;
@@ -225,7 +225,7 @@ nav a.active {
 
   .bg {
     /* The image used */
-    background-image: url("./assets//caterer.jpg");
+    background-image: url("../assets/caterer.jpg");
 
     /* Full height */
     height: 100%; 
@@ -236,7 +236,7 @@ nav a.active {
     background-size: cover;
   }
   .wall {
-    background-image: url("./assets//caterer.jpg");
+    background-image: url("../assets/caterer.jpg");
     width: 100%;
     height: 450px;
     background-size: 100% 200px;
