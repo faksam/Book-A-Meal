@@ -367,6 +367,13 @@ nav a.active {
   background-color: #4CAF50;
   color: #ffffff;
 }
+.card_content a button.danger:hover
+{
+  border: 2px solid #CB3438;
+  /**/
+  background-color: #CB3438;
+  color: #ffffff;
+}
 .card_image
 {
   /* */

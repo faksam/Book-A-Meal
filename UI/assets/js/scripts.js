@@ -96,3 +96,8 @@ $(document).ready(function(){
     signInModal.style.display = "block";
 }
 
+function newMeal() {newMealModal
+  var newMealModal = document.getElementById('newMealModal');
+  newMealModal.style.display = "block";
+}
+

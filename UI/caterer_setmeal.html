@@ -63,43 +63,36 @@
                 </section>
             </div>
             <div class="row center">
-                <h2>My Account Details</h2>
-                <div class="container">
-                    <div>
-                        <img src="./assets/images/caterer_avatar.jpg" style="height: 70px;"/>
-                    </div>
+                <div class="col col-1-3"></div>
+                <div class="col col-1-2">
                     <form class=" center">
-                        <div class="row">
-                            <div class="row">
-                                <div class="input col col-1-2">
-                                    <i class="material-icons prefix">account_box</i>
-                                    <input id="full_name" type="text" placeholder="Full Name" class="validate">
+                            <h2 class="">Set Daily Meal</h2>
+                                <div class="input col-1">
+                                    <p>Pick Date:</p>
+                                    <input id="order_day" name="order_day" type="date" min="2018-05-06">
                                 </div>
-                                <div class="input col col-1-2">
-                                    <i class="material-icons prefix">email</i>
-                                    <input id="email" type="text" placeholder="Email" class="validate">
+                                <div class="input col-1">
+                                    <p>Select Meal:</p>
+                                    <select class="input browser-default">
+                                        <option value="" disabled selected>Choose from menu</option>
+                                        <option value="1">Pounded Yam &amp; Egusi</option>
+                                        <option value="2">Fried Rice &amp; Chicken</option>
+                                        <option value="3">Jollof Rice &amp; Chicken</option>
+                                        <option value="4">Amala &amp; Ewedu</option>
+                                        <option value="5">Fufu &amp; Egusi</option>
+                                    </select>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="input col col-1-2">
-                                    <i class="material-icons prefix">account_circle</i>
-                                    <input id="account_password" type="password" placeholder="Password" class="validate">
-                                </div>
-                                <div class="input col col-1-2">
-                                    <i class="material-icons prefix">phone</i>
-                                    <input id="phone_no" type="text" placeholder="Phone Number" class="validate">
-                                </div>
-                            </div>
+                            <br>
+                        </form>
+                        <div class="input">
+                            <a href="./menupage.html">
+                                <button>Set Meal</button>
+                            </a>
                         </div>
                         <br>
-                    </form>
-                    <a href="#"><button style="width: 50%;">Save</button></a>
-                    <br>
                 </div>
             </div>
-            <div class="row">
-
-            </div>
+            <br><br>
         </div>
     </div>
     <br>
@@ -116,7 +109,36 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Import js scripts-->
     <script>
+        $(document).ready(function () {
+            var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
 
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var current_date = year + "-" + month + "-" + day;
+
+            var order_day = document.getElementById('order_day');
+            order_day.setAttribute("min", current_date);
+
+            //var order_day = document.getElementById('order_day01');
+            //var menu_title = document.getElementById('menu_title');
+            //order_day01.setAttribute("min", current_date);
+           // order_day01.value = current_date;
+
+            //menu_title.innerHTML = "Menu: " + date.toDateString();
+
+
+        }); // end DOM ready
+        // $('#order_day01')
+        //     .on("change", function (e) {
+        //         //console.log("Date changed: ", e.target.value);
+        //         //$('#menu_title').text($(this).val())
+        //         var mydate = new Date($(this).val());
+        //         menu_title.innerHTML = "Menu: " + mydate.toDateString();
+        //     });
     </script>
     <script type="text/javascript" src="./assets/js/scripts.js"> </script>
 </body>

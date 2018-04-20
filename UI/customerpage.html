@@ -172,36 +172,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Import js scripts-->
     <script>
-        $(document).ready(function () {
-            var date = new Date();
-            var day = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
 
-            if (month < 10) month = "0" + month;
-            if (day < 10) day = "0" + day;
-
-            var current_date = year + "-" + month + "-" + day;
-
-            var order_day = document.getElementById('order_day');
-            order_day.setAttribute("min", current_date);
-
-            var order_day = document.getElementById('order_day01');
-            var menu_title = document.getElementById('menu_title');
-            order_day01.setAttribute("min", current_date);
-            order_day01.value = current_date;
-
-            menu_title.innerHTML = "Menu: " + date.toDateString();
-
-
-        }); // end DOM ready
-        $('#order_day01')
-            .on("change", function (e) {
-                //console.log("Date changed: ", e.target.value);
-                //$('#menu_title').text($(this).val())
-                var mydate = new Date($(this).val());
-                menu_title.innerHTML = "Menu: " + mydate.toDateString();
-            });
     </script>
     <script type="text/javascript" src="./assets/js/scripts.js"> </script>
 </body>
