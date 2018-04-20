@@ -172,6 +172,24 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Import js scripts-->
     <script>
+        $(document).ready(function () {
+            var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            if (month < 10) month = "0" + month;
+            if (day < 10) day = "0" + day;
+
+            var current_date = year + "-" + month + "-" + day;
+
+            var order_day = document.getElementById('order_day');
+            order_day.setAttribute("min", current_date);
+
+            var order_day = document.getElementById('order_day01');
+
+
+        }); // end DOM ready
 
     </script>
     <script type="text/javascript" src="./assets/js/scripts.js"> </script>
