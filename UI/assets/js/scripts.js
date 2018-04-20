@@ -91,5 +91,8 @@ $(document).ready(function(){
     
   }); // end DOM ready
 
-
+  function order() {// Get the signinModal
+    var signInModal = document.getElementById('signinModal');
+    signInModal.style.display = "block";
+}
 
