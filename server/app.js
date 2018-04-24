@@ -3,7 +3,7 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-// import indexRouter from './routes/index';
+import indexRouter from './routes/index';
 // import usersRouter from './routes/v1/users';
 
 // import mealsRouter from './routes/v1/meals';
@@ -45,7 +45,7 @@ app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 // app.route('/meals/:id').delete(meals.deleteMeal);
 // app.route('/meals/:id').put(meals.updateMeal);
 
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
