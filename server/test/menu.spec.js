@@ -125,23 +125,29 @@ describe('API endpoint /menu', () => {
   });
 
   // GET - List all menu items
-  it('it should return all daily menu', () => chai.request(app)
-    .get('/api/v1/menu')
-    .then((res) => {
-      expect(res).to.have.status(200);
-      // expect(res).to.be.json;
-      expect(res.body).to.be.an('object');
-      expect(res.body.menu).to.be.an('array');
-    }));
+  it('it should return all daily menu', (done) => {
+    chai.request(app)
+      .get('/api/v1/menu')
+      .then((res) => {
+        expect(res).to.have.status(200);
+        // expect(res).to.be.json;
+        expect(res.body).to.be.an('object');
+        expect(res.body.menu).to.be.an('array');
+        done();
+      });
+  });
   // GET - a menu
-  it('it should return a menu by the given id', () => chai.request(app)
-    .get('/api/v1/menu/1')
-    .then((res) => {
-      expect(res).to.have.status(200);
-      // expect(res).to.be.json;
-      expect(res.body).to.be.an('object');
-      // expect(res.body.menu).to.be.an('array');
-    }));
+  it('it should return a menu by the given id', (done) => {
+    chai.request(app)
+      .get('/api/v1/menu/1')
+      .then((res) => {
+        expect(res).to.have.status(200);
+        // expect(res).to.be.json;
+        expect(res.body).to.be.an('object');
+        // expect(res.body.menu).to.be.an('array');
+        done();
+      });
+  });
 
   // GET - Invalid path
   // it('it should return Not Found', () => chai.request(app)
@@ -155,38 +161,46 @@ describe('API endpoint /menu', () => {
   //   }));
 
   // POST - Add new menu
-  it('it should add new menu', () => chai.request(app)
-    .post('/api/v1/menu')
-    .send(menuItem)
-    .then((res) => {
-      expect(res).to.have.status(201);
-      // expect(res).to.be.json;
-      expect(res.body).to.be.an('object');
-      // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
-    }));
+  it('it should add new menu', (done) => {
+    chai.request(app)
+      .post('/api/v1/menu')
+      .send(menuItem)
+      .then((res) => {
+        expect(res).to.have.status(201);
+        // expect(res).to.be.json;
+        expect(res.body).to.be.an('object');
+        // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
+        done();
+      });
+  });
 
   // PUT - Update specific menu/3 by id
-  it('it should update menu/1', () => chai.request(app)
-    .put('/api/v1/menu/1')
-    .send(menuItem)
-    .then((res) => {
-      expect(res).to.have.status(200);
-      // expect(res).to.be.json;
-      expect(res.body).to.be.an('object');
-      // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
-    }));
+  it('it should update menu/1', (done) => {
+    chai.request(app)
+      .put('/api/v1/menu/1')
+      .send(menuItem)
+      .then((res) => {
+        expect(res).to.have.status(200);
+        // expect(res).to.be.json;
+        expect(res.body).to.be.an('object');
+        // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
+        done();
+      });
+  });
 
   // Delete - Delete specific menu/1 by id
-  it('it should delete menu/1', () => chai.request(app)
-    .delete('/api/v1/menu/1')
-    .send(menuItem)
-    .then((res) => {
-      expect(res).to.have.status(200);
-      // expect(res).to.be.json;
-      expect(res.body).to.be.an('object');
-      // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
-    }));
-
+  it('it should delete menu/1', (done) => {
+    chai.request(app)
+      .delete('/api/v1/menu/1')
+      .send(menuItem)
+      .then((res) => {
+        expect(res).to.have.status(200);
+        // expect(res).to.be.json;
+        expect(res.body).to.be.an('object');
+        // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
+        done();
+      });
+  });
   // // POST - Bad Request
   // it('should return Bad Request', function () {
   //    return chai.request(app)
