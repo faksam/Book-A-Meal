@@ -1,24 +1,3 @@
-// import * as express from 'express';
-// var usersRouter = require('./routes/v1/users');
-// import usersRouter from './v1/users';
-
-// import mealsRouter from './v1/meals';
-// import menuRouter from './v1/menu';
-// import ordersRouter from './v1/orders';
-
-
-// export default function setRoutes(app) {
-//   const router = express.Router();
-
-//   // app.use('/users', usersRouter);
-//   // app.use('/meals', mealsRouter);
-//   // app.use('/menu', menuRouter);
-//   // app.use('/orders', ordersRouter);
-
-//   // Apply the routes to our application with the prefix /api
-//   // app.use('/api', router);
-// }
-
 import express from 'express';
 import path from 'path';
 import apiv1 from './v1/api1';
