@@ -272,11 +272,11 @@
     </div>
 
     <!-- SignUp Modal -->
-    <div id="signupModal" class="modal">
+    <div id="0signupModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <span id="signupSpan" class="close">&times;</span>
+                <span id="0signupSpan" class="close">&times;</span>
                 <h2>Create Account</h2>
             </div>
             <div class="modal-body">
@@ -287,21 +287,21 @@
                                 <div class="row">
                                     <div class="input col col-1-2">
                                         <i class="material-icons prefix">account_box</i>
-                                        <input id="full_name" type="text" placeholder="Full Name" class="validate">
+                                        <input id="0full_name" type="text" placeholder="Full Name" class="validate">
                                     </div>
                                     <div class="input col col-1-2">
                                         <i class="material-icons prefix">email</i>
-                                        <input id="email" type="text" placeholder="Email" class="validate">
+                                        <input id="0email" type="text" placeholder="Email" class="validate">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input col col-1-2">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input id="account_password" type="password" placeholder="Password" class="validate">
+                                        <input id="0account_password" type="password" placeholder="Password" class="validate">
                                     </div>
                                     <div class="input col col-1-2">
                                         <i class="material-icons prefix">phone</i>
-                                        <input id="phone_no" type="text" placeholder="Phone Number" class="validate">
+                                        <input id="0phone_no" type="text" placeholder="Phone Number" class="validate">
                                     </div>
                                 </div>
                             </div>
@@ -373,11 +373,11 @@
                                 <div class="row">
                                     <div class="input col col-1-2">
                                         <i class="material-icons prefix">email</i>
-                                        <input id="email" type="text" placeholder="Email" class="validate">
+                                        <input id="1email" type="text" placeholder="Email" class="validate">
                                     </div>
                                     <div class="input col col-1-2">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input id="account_password" type="password" placeholder="Password" class="validate">
+                                        <input id="1account_password" type="password" placeholder="Password" class="validate">
                                     </div>
                                 </div>
                             </div>
@@ -415,6 +415,13 @@
     <!--Import jQuery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!--Import js scripts-->
+    <script type="text/javascript">
+        function order() {// Get the signinModal
+            var signInModal = document.getElementById('signinModal');
+            signInModal.style.display = "block";
+        }
+
+    </script>
     <script type="text/javascript" src="./assets/js/scripts.js"> </script>
 </body>
 
