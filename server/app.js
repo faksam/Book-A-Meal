@@ -10,14 +10,14 @@ import logger from 'morgan';
 // import menuRouter from './routes/v1/menu';
 // import ordersRouter from './routes/v1/orders';
 
-//import meals from './routes/meals';
+// import meals from './routes/meals';
 
 const app = express();
 
 // Start server
 const port = 3456;
 app.listen(port);
-console.log(`Listening on port : ${port}`);
+// console.log(`Listening on port : ${port}`);
 
 app.set('views', path.join(__dirname, '../UI'));
 app.engine('html', require('ejs').renderFile);
