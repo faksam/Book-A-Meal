@@ -10,7 +10,7 @@ import logger from 'morgan';
 // import menuRouter from './routes/v1/menu';
 // import ordersRouter from './routes/v1/orders';
 
-import meals from './routes/meals';
+//import meals from './routes/meals';
 
 const app = express();
 
