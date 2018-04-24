@@ -8,6 +8,9 @@
     "test": "mocha ./server/test/**.spec.js --recursive --compilers js:babel-register --exit",
     "posttest": "eslint --ignore-path .gitignore ."
   },
+  "engines": {
+    "node": "4.1.1"
+  },
   "dependencies": {
     "body-parser": "~1.17.1",
     "chai": "^4.1.2",
