@@ -11,24 +11,25 @@ Book-A-Meal App and it is an application that allows customers to make food orde
 ## Table of Content
 
  * [Features](#features)
- * [Technologies](#technologies-used)
+ * [Technologies](#technologies)
  * [Installation](#installation)
  * [Testing](#testing)
- * [API End Points](#api-routes)
+ * [API End Points](#api-end-points)
+ * [License](#license)
 
 ## Features
 Below are the features of the Book-A-Meal App
 ####  Users
 * Users can signup and signin.
-* #### Caterer's
-  * Caterer's can manage (i.e: add, modify and delete) meal options in the application.
-  * Caterer's can set menu for a specific day.
-  * Caterer's can view daily report's.
-  * Caterer's can get all order history for a specific day.
-* #### Customer's
-  * Customer's can view the menu for a specific day.
-  * Customer's can manage (i.e: add and modify) his/her order.
-  * Customer's can view his/her order history.
+#### Caterer's
+* Caterer's can manage (i.e: add, modify and delete) meal options in the application.
+* Caterer's can set menu for a specific day.
+* Caterer's can view daily report's.
+* Caterer's can get all order history for a specific day.
+#### Customer's
+* Customer's can view the menu for a specific day.
+* Customer's can manage (i.e: add and modify) his/her order.
+* Customer's can view his/her order history.
 
 ## Technologies used
 
@@ -93,5 +94,12 @@ Codes are written in accordance with Airbnb JavaScript style guide, see [here](h
 
 <tr><td>GET</td> <td>api/v1/orders/</td> <td>Get all the orders</td></tr>
 
+
 ## License
-    ISC
+ISC
+
+Copyright 2018 [Fakunle Mayowa Samuel](http://fakunlesamuel.com)
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
