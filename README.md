@@ -22,13 +22,13 @@ Below are the features of the Book-A-Meal App
 ####  Users
 * Users can signup and signin.
 * #### Caterer's
-  * Caterer's can manage (i.e: add, modify and delete) meal options in the application.
-  * Caterer's can set menu for a specific day.
-  * Caterer's can view daily report's.
-  * Caterer's can get all order history for a specific day.
+  * Caterer's can manage (i.e: add, modify and delete) meal options in the application.
+  * Caterer's can set menu for a specific day.
+  * Caterer's can view daily report's.
+  * Caterer's can get all order history for a specific day.
 * #### Customer's
-  * Customer's can view the menu for a specific day.
-  * Customer's can manage (i.e: add and modify) his/her order.
+  * Customer's can view the menu for a specific day.
+  * Customer's can manage (i.e: add and modify) his/her order.
   * Customer's can view his/her order history.
 
 ## Technologies used
