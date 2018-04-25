@@ -49,7 +49,7 @@ Codes are written in accordance with Airbnb JavaScript style guide, see [here](h
 ## Installation
 1. Clone this repository into your local machine:
 
-`git clone https://github.com/topseySuave/event-manager.git`
+`git clone https://github.com/faksam/Book-A-Meal.git`
 
 2. Install dependencies
 
