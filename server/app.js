@@ -15,9 +15,10 @@ import indexRouter from './routes/index';
 const app = express();
 
 // Start server
-const port = 3456;
-app.listen(port);
-// console.log(`Listening on port : ${port}`);
+const PORT = process.env.PORT || 3456;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 app.set('views', path.join(__dirname, '../UI'));
 app.engine('html', require('ejs').renderFile);

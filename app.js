@@ -15,9 +15,9 @@ import logger from 'morgan';
 const app = express();
 
 // Start server
-const port = 3456;
+const port = normalizePort(process.env.PORT || '3456');
 app.listen(port);
-// console.log(`Listening on port : ${port}`);
+console.log(`Listening on port : ${port}`);
 
 app.set('views', path.join(__dirname, '../UI'));
 app.engine('html', require('ejs').renderFile);
