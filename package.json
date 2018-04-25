@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server/app.js",
+    "clean": "rimraf dist && mkdir dist",
+    "build-babel": "babel ./server --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./server/dist --copy-files",
+    "build": "npm run clean && npm run build-babel",
+    "start": "node dist/app.js",
     "dev": "nodemon ./server/app.js --exec babel-node --presets babel-preset-env",
     "test": "mocha ./server/test/**.spec.js --recursive --compilers js:babel-register --exit",
     "posttest": "eslint --ignore-path .gitignore ."
-  },
-  "engines": {
-    "node": "4.1.1"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
