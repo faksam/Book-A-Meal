@@ -14,7 +14,7 @@ Book-A-Meal App and it is an application that allows customers to make food orde
  * [Technologies](#technologies-used)
  * [Installation](#installation)
  * [Testing](#testing)
- * [API End Points](#api-end-points)
+ * [API End Points](#api-routes)
 
 ## Features
 Below are the features of the Book-A-Meal App
