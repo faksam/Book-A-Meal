@@ -93,5 +93,5 @@ Codes are written in accordance with Airbnb JavaScript style guide, see [here](h
 
 <tr><td>GET</td> <td>api/v1/orders/</td> <td>Get all the orders</td></tr>
 
-### License
+## License
     ISC
