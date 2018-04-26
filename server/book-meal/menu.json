@@ -1,0 +1,105 @@
+{
+    "menu": [
+        {
+            "id": "1",
+            "date": "20-04-2018",
+            "meals": [
+                {
+                    "id": 1,
+                    "name": "Fried Rice & CHicken",
+                    "description": "Dem Fry Rice with groundnut oil and put plenty maggi, abeggi I no know",
+                    "price": 1500,
+                    "categories": "Breakfast, Lunch, Dinner",
+                    "status": "Ready",
+                    "pictures": [
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        },
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        }
+                    ],
+                    "caterer_id": "123456qwerty"
+                },
+                {
+                    "id": 2,
+                    "name": "Jollof Rice & CHicken",
+                    "description": "Dem Fry Pepper with groundnut oil and put plenty maggi, abeggi I no know",
+                    "price": 1500,
+                    "categories": "Breakfast, Lunch, Dinner",
+                    "status": "Ready",
+                    "pictures": [
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        },
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        }
+                    ],
+                    "caterer_id": "123456qwerty"
+                },
+                {
+                    "id": 3,
+                    "name": "Semo and Egusi",
+                    "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
+                    "price": 1500,
+                    "categories": "Breakfast, Lunch, Dinner",
+                    "status": "Ready",
+                    "pictures": [
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        },
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        }
+                    ],
+                    "caterer_id": "123456qwerty"
+                },
+                {
+                    "id": 4,
+                    "name": "Fufu and Egusi",
+                    "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
+                    "price": 1500,
+                    "categories": "Breakfast, Lunch, Dinner",
+                    "status": "Ready",
+                    "pictures": [
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        },
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        }
+                    ],
+                    "caterer_id": "123456qwerty"
+                },
+                {
+                    "id": 5,
+                    "name": "Pounded Yam",
+                    "description": "Trust me I know how to make pounded yam, but no time",
+                    "price": 1500,
+                    "categories": "Breakfast, Lunch, Dinner",
+                    "status": "Ready",
+                    "pictures": [
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        },
+                        {
+                            "name": "Location",
+                            "size": "400"
+                        }
+                    ],
+                    "caterer_id": "123456qwerty"
+                }
+            ]
+        }
+    ]
+}
