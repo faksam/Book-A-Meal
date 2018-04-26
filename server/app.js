@@ -17,7 +17,7 @@ const app = express();
 // Start server
 const PORT = process.env.PORT || 3456;
 app.listen(PORT, () => {
-  //  console.log(`Our app is running on port ${PORT}`);
+// console.log(`The app is running on port ${PORT}`);
 });
 
 app.set('views', path.join(__dirname, '../UI'));
