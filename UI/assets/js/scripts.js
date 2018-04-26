@@ -1,3 +1,5 @@
+/* eslint-env jquery */
+/* eslint func-names: ["error", "never"] */
 $(document).ready(() => {
   // Navigation
   // If a link has a dropdown, add sub menu toggle.
@@ -41,13 +43,11 @@ $(document).ready(() => {
   const catererSigninBtn = document.getElementById('catererSigninBtn');
 
   if (signUpBtn != null || signInBtn != null || catererSigninBtn) {
-    const signUpSpan = document.getElementById('signupSpan');
+    const signUpSpan = document.getElementById('0signupSpan');
     const signInSpan = document.getElementById('signinSpan');
     const catererSignInSpan = document.getElementById('catererSigninSpan');
 
     // Get the <span> element that closes the modal
-
-    const span = document.getElementsByClassName('close')[0];
 
     // When the user clicks the button, open the modal
     signUpBtn.onclick = function () {
@@ -71,30 +71,20 @@ $(document).ready(() => {
       signInSpan.onclick = function () {
         signInModal.style.display = 'none';
       };
-      catererSigninSpan.onclick = function () {
+      catererSignInSpan.onclick = function () {
         catererSigninModal.style.display = 'none';
       };
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-      if (event.target == signUpModal || event.target == signInModal || event.target == catererSigninModal) {
+      if (event.target === signUpModal) {
         signUpModal.style.display = 'none';
+      } else if (event.target === signInModal) {
         signInModal.style.display = 'none';
+      } else if (event.target === catererSigninModal) {
         catererSigninModal.style.display = 'none';
       }
     };
   }
 }); // end DOM ready
-
-function order() { // Get the signinModal
-  const signInModal = document.getElementById('signinModal');
-  signInModal.style.display = 'block';
-}
-
-function newMeal() {
-  newMealModal;
-  var newMealModal = document.getElementById('newMealModal');
-  newMealModal.style.display = 'block';
-}
-
