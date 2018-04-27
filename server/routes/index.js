@@ -1,10 +1,9 @@
 import express from 'express';
 import path from 'path';
-import apiv1 from './v1/api1';
+
 
 const app = express();
 
-app.use('/api/v1/', apiv1);
 
 /* GET home page. */
 app.use('*', (req, res, next) => {
