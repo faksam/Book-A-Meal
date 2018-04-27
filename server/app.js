@@ -3,7 +3,7 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-// import indexRouter from './routes/index';
+import indexRouter from './routes/index';
 // import usersRouter from './routes/v1/users';
 
 // import mealsRouter from './routes/v1/meals';
@@ -15,9 +15,10 @@ import logger from 'morgan';
 const app = express();
 
 // Start server
-const port = 3456;
-app.listen(port);
-// console.log(`Listening on port : ${port}`);
+const PORT = process.env.PORT || 3456;
+app.listen(PORT, () => {
+// console.log(`The app is running on port ${PORT}`);
+});
 
 app.set('views', path.join(__dirname, '../UI'));
 app.engine('html', require('ejs').renderFile);
@@ -45,7 +46,7 @@ app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 // app.route('/meals/:id').delete(meals.deleteMeal);
 // app.route('/meals/:id').put(meals.updateMeal);
 
-// app.use('/', indexRouter);
+app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

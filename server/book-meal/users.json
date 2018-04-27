@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "full_name": "Fakunle Mayowa Samuel",
+            "email": "fakunlesamuel@gmail.com",
+            "phone_no":"07039248533",
+            "role": "caterer"
+        },
+        {
+            "id": 2,
+            "full_name": "Fakunle Samuel",
+            "email": "fakunlesamuel@live.co.uk",
+            "phone_no":"07039248533",
+            "role": "customer"
+        }
+    ]
+}
