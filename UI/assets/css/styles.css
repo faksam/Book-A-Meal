@@ -394,3 +394,11 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.input a button.book_meal:hover
+{
+  border: 2px solid #4CAF50;
+  /**/
+  background-color: #4CAF50;
+  color: #ffffff;
+}

@@ -13,6 +13,13 @@
             "email": "fakunlesamuel@live.co.uk",
             "phone_no":"07039248533",
             "role": "customer"
+        },
+        {
+            "id": 3,
+            "full_name": "Mayowa Samuel",
+            "email": "fakunlesamuel@live.co.uk",
+            "phone_no":"07039248533",
+            "role": "customer"
         }
     ]
 }
