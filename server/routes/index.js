@@ -1,10 +1,6 @@
 import express from 'express';
-import path from 'path';
-import apiv1 from './v1/api1';
+// import path from 'path';
 
-const app = express();
-
-app.use('/api/v1/', apiv1);
 
 const app = express();
 
@@ -15,5 +11,6 @@ const app = express();
 //   // res.render('index', { title: 'Express' });
 //   res.render('index');
 // });
+
 
 module.exports = app;
