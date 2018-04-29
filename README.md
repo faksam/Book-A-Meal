@@ -1,6 +1,6 @@
 # Book-A-Meal
 
-[![Build Status](https://travis-ci.org/faksam/Book-A-Meal.svg?branch=develop)](https://travis-ci.org/faksam/Book-A-Meal) [![Coverage Status](https://coveralls.io/repos/github/faksam/Book-A-Meal/badge.svg?branch=develop)](https://coveralls.io/github/faksam/Book-A-Meal?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/d91ba5c8513e92245051/maintainability)](https://codeclimate.com/github/faksam/Book-A-Meal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d91ba5c8513e92245051/test_coverage)](https://codeclimate.com/github/faksam/Book-A-Meal/test_coverage)
+[![Build Status](https://travis-ci.org/faksam/Book-A-Meal.svg?branch=develop)](https://travis-ci.org/faksam/Book-A-Meal) [![Coverage Status](https://coveralls.io/repos/github/faksam/Book-A-Meal/badge.svg?branch=develop&service=github)](https://coveralls.io/github/faksam/Book-A-Meal?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/d91ba5c8513e92245051/maintainability)](https://codeclimate.com/github/faksam/Book-A-Meal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d91ba5c8513e92245051/test_coverage)](https://codeclimate.com/github/faksam/Book-A-Meal/test_coverage)
 
 
 ## Application Description
