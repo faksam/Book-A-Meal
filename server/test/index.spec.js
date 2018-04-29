@@ -38,5 +38,14 @@ describe('API endpoint /', () => {
         done();
       });
   });
+  // GET - unexisting about page
+  it('get the unexisting  about page status', (done) => {
+    chai.request(app)
+      .get('/about')
+      .then((res) => {
+        expect(res.statusCode).to.equal(404);
+        done();
+      });
+  });
 });
 
