@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "clean": "rimraf dist && mkdir dist",
-    "build-babel": "babel ./server --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./server/dist --copy-files",
+    "clean": "rimraf ./dist/",
+    "build-babel": "babel ./server --out-dir ./dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./dist --copy-files",
     "build": "npm run clean && npm run build-babel",
     "start": "babel-node server/app.js",
     "dev": "nodemon ./server/app.js --exec babel-node --presets babel-preset-env",
