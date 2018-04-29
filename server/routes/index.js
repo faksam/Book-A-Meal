@@ -1,5 +1,5 @@
 import express from 'express';
-import path from 'path';
+// import path from 'path';
 
 
 const app = express();
@@ -7,7 +7,9 @@ const app = express();
 
 /* GET home page. */
 app.get('/', (req, res, next) => {
-  res.render(path.join(__dirname, '/index.html'));
+  // res.render(path.join(__dirname, '/index.html'));
+  // res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 
