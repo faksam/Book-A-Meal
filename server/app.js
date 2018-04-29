@@ -46,6 +46,7 @@ app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 // app.route('/meals/:id').delete(meals.deleteMeal);
 // app.route('/meals/:id').put(meals.updateMeal);
 
+
 app.use('/*', indexRouter);
 
 // catch 404 and forward to error handler
