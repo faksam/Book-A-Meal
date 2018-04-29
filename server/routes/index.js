@@ -7,7 +7,7 @@ const app = express();
 
 /* GET home page. */
 app.get('/', (req, res, next) => {
-  res.render(path.join(__dirname, '/UI/index.html'));
+  res.render(path.join(__dirname, '/index.html'));
 });
 
 
