@@ -15,9 +15,10 @@ import indexRouter from './routes/index';
 const app = express();
 
 // Start server
-const port = 3456;
-app.listen(port);
-// console.log(`Listening on port : ${port}`);
+const PORT = process.env.PORT || 3456;
+app.listen(PORT, () => {
+  // console.log(`The app is running on port ${PORT}`);
+});
 
 app.set('views', path.join(__dirname, '../UI'));
 app.engine('html', require('ejs').renderFile);
@@ -45,29 +46,35 @@ app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 // app.route('/meals/:id').delete(meals.deleteMeal);
 // app.route('/meals/:id').put(meals.updateMeal);
 
-app.use('/', indexRouter);
+app.use('/*', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
 });
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
 // error handler
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.message = err.message;
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
+  res.status(err.status);
   res.render('error');
 });
+
+// production error handler
+// no stacktraces leaked to user
+// app.use((err, req, res, next) => {
+//   if (err.status !== 500) {
+//     res.status(err.status);
+//   } else { res.status(500); }
+//   res.render('error', {
+//     message: err.message,
+//     error: {}
+//   });
+// });
+
 
 module.exports = app;
