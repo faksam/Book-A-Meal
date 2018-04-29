@@ -6,11 +6,11 @@ const app = express();
 
 
 /* GET home page. */
-app.get('/', (req, res, next) => {
-  // res.render(path.join(__dirname, '/index.html'));
-  // res.render('index', { title: 'Express' });
-  res.render('index');
-});
+// app.get('/', (req, res, next) => {
+//   // res.render(path.join(__dirname, '/index.html'));
+//   // res.render('index', { title: 'Express' });
+//   res.render('index');
+// });
 
 
 module.exports = app;
