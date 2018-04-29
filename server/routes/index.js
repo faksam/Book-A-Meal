@@ -2,7 +2,7 @@ import express from 'express';
 // import path from 'path';
 // import apiv1 from './v1/api1';
 
-// const app = express();
+const app = express();
 
 // app.use('/api/v1/', apiv1);
 
