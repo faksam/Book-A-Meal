@@ -4,6 +4,8 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import indexRouter from './routes/index';
+import apiv1 from './routes/v1/api1';
+
 // import usersRouter from './routes/v1/users';
 
 // import mealsRouter from './routes/v1/meals';
@@ -35,6 +37,8 @@ app.use(express.static(path.join(__dirname, '../UI')));
 // // Require static assets from template folder
 app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 
+app.use('/api/v1/', apiv1);
+
 // app.use('/users', usersRouter);
 // app.use('/meals', mealsRouter);
 // app.use('/menu', menuRouter);
@@ -45,7 +49,6 @@ app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 // app.route('/meals/:id').get(meals.getMeal);
 // app.route('/meals/:id').delete(meals.deleteMeal);
 // app.route('/meals/:id').put(meals.updateMeal);
-
 
 app.use('/*', indexRouter);
 
