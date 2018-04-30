@@ -8,4 +8,6 @@ coverage/
 
 dist/
 
+server/dist/
+
 .env
