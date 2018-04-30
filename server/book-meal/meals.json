@@ -1,7 +1,7 @@
 {
     "meals": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Fried Rice & CHicken",
             "description": "Dem Fry Rice with groundnut oil and put plenty maggi, abeggi I no know",
             "price": 1500,
@@ -11,7 +11,7 @@
             "caterer_id": "123456qwerty"
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Jollof Rice & CHicken",
             "description": "Dem Fry Pepper with groundnut oil and put plenty maggi, abeggi I no know",
             "price": 1200,
@@ -21,7 +21,7 @@
             "caterer_id": "123456qwerty"
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Fufu and Egusi",
             "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
             "price": 1000,
@@ -31,7 +31,7 @@
             "caterer_id": "123456qwerty"
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Afang soup and Fufu",
             "description": "DSincerely I dont know how to make afang, not even a clue.",
             "price": 800,
@@ -41,7 +41,7 @@
             "caterer_id": "123456qwerty"
         },
         {
-            "id": 5,
+            "id": "5",
             "name": "Semo and Egusi",
             "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
             "price": 700,
@@ -51,7 +51,7 @@
             "caterer_id": "123456qwerty"
         },
         {
-            "id": 6,
+            "id": "6",
             "name": "Pounded Yam",
             "description": "Trust me I know how to make pounded yam, but no time",
             "price": 1300,
@@ -61,7 +61,7 @@
             "caterer_id": "123456qwerty"
         },
         {
-            "id": 7,
+            "id": "7",
             "name": "Amala & Ewedu",
             "description": "Trust me I know how to make amala and ewedu, but again no time",
             "price": 1500,

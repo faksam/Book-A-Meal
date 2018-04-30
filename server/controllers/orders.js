@@ -31,10 +31,12 @@ function getOrder(req, res) {
  * DELETE /meal/:id to delete a meal given its id.
  */
 function deleteOrder(req, res) {
-  orders.orders.forEach((element, index) => {
+  let count = 0;
+  orders.orders.forEach((element) => {
     if (element.id === req.params.id) {
-      delete orders.orders[index];
+      orders.orders.splice(count, 1);
     }
+    count += 1;
   });
   res.send(orders);
 }
