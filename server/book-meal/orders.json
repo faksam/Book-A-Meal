@@ -10,16 +10,7 @@
                     "price": 1500,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "fried_rice.jpg",
                     "caterer_id": "123456qwerty"
                 }
             ],
@@ -39,16 +30,7 @@
                     "price": 1500,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "fried_rice.jpg",
                     "caterer_id": "123456qwerty"
                 }
             ],
@@ -68,16 +50,7 @@
                     "price": 1500,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "fried_rice.jpg",
                     "caterer_id": "123456qwerty"
                 }
             ],

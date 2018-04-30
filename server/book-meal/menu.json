@@ -11,92 +11,67 @@
                     "price": 1500,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "fried_rice.jpg",
                     "caterer_id": "123456qwerty"
                 },
                 {
                     "id": 2,
                     "name": "Jollof Rice & CHicken",
                     "description": "Dem Fry Pepper with groundnut oil and put plenty maggi, abeggi I no know",
-                    "price": 1500,
+                    "price": 1200,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "jollof_rice.Jpeg",
                     "caterer_id": "123456qwerty"
                 },
                 {
                     "id": 3,
-                    "name": "Semo and Egusi",
+                    "name": "Fufu and Egusi",
                     "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
-                    "price": 1500,
+                    "price": 1000,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "fufu_egusi.jpg",
                     "caterer_id": "123456qwerty"
                 },
                 {
                     "id": 4,
-                    "name": "Fufu and Egusi",
-                    "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
-                    "price": 1500,
+                    "name": "Afang soup and Fufu",
+                    "description": "DSincerely I dont know how to make afang, not even a clue.",
+                    "price": 800,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "afang_soup_fufu.JPG",
                     "caterer_id": "123456qwerty"
                 },
                 {
                     "id": 5,
+                    "name": "Semo and Egusi",
+                    "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
+                    "price": 700,
+                    "categories": "Breakfast, Lunch, Dinner",
+                    "status": "Ready",
+                    "pictures": "table.jpg",
+                    "caterer_id": "123456qwerty"
+                },
+                {
+                    "id": 6,
                     "name": "Pounded Yam",
                     "description": "Trust me I know how to make pounded yam, but no time",
+                    "price": 1300,
+                    "categories": "Breakfast, Lunch, Dinner",
+                    "status": "Ready",
+                    "pictures": "Breakfast.jpg",
+                    "caterer_id": "123456qwerty"
+                },
+                {
+                    "id": 7,
+                    "name": "Amala & Ewedu",
+                    "description": "Trust me I know how to make amala and ewedu, but again no time",
                     "price": 1500,
                     "categories": "Breakfast, Lunch, Dinner",
                     "status": "Ready",
-                    "pictures": [
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        },
-                        {
-                            "name": "Location",
-                            "size": "400"
-                        }
-                    ],
+                    "pictures": "amala_ewedu.jpg",
                     "caterer_id": "123456qwerty"
                 }
             ]
