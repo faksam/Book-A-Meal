@@ -1,41 +1,17 @@
 import express from 'express';
-import path from 'path';
-import apiv1 from './v1/api1';
+// import path from 'path';
+// import apiv1 from './v1/api1';
 
 const app = express();
 
-app.use('/api/v1/', apiv1);
+// app.use('/api/v1/', apiv1);
 
 /* GET home page. */
-app.use('*', (req, res, next) => {
-  res.render(path.join(__dirname, '/UI/index.html'));
-});
+// app.get('/', (req, res, next) => {
+//   // res.render(path.join(__dirname, '/index.html'));
+//   // res.render('index', { title: 'Express' });
+//   res.render('index');
+// });
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-if (app.get('env') === 'development') {
-  app.use((err, req, res, next) => {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.render('error.', {
-    message: err.message,
-    error: {}
-  });
-});
 
 module.exports = app;
