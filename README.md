@@ -4,7 +4,7 @@
 
 
 ## Application Description
-Book-A-Meal App and it is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat. 
+Book-A-Meal App and it is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.
 
 <b> View UI Template:</b> https://faksam.github.io/Book-A-Meal/UI/
  <br/><b> Test API Endpoints Here: </b> https://bookameal.herokuapp.com/

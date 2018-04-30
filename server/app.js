@@ -4,6 +4,8 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import indexRouter from './routes/index';
+import apiv1 from './routes/v1/api1';
+
 // import usersRouter from './routes/v1/users';
 
 // import mealsRouter from './routes/v1/meals';
@@ -35,6 +37,8 @@ app.use(express.static(path.join(__dirname, '../UI')));
 // // Require static assets from template folder
 app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 
+app.use('/api/v1/', apiv1);
+
 // app.use('/users', usersRouter);
 // app.use('/meals', mealsRouter);
 // app.use('/menu', menuRouter);
@@ -46,22 +50,32 @@ app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 // app.route('/meals/:id').delete(meals.deleteMeal);
 // app.route('/meals/:id').put(meals.updateMeal);
 
-app.use('/*', indexRouter);
-
+// app.use('/*', indexRouter);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  next(createError(404));
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
-// error handler
-app.use((err, req, res, next) => {
-  // set locals, only providing error in development
-  // res.locals.message = err.message;
-  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+if (app.get('env') === 'development') {
+  app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
+    });
+  });
+}
 
-  // render the error page
-  res.status(err.status);
-  res.render('error');
+// production error handler
+// no stacktraces leaked to user
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.render('error.', {
+    message: err.message,
+    error: {}
+  });
 });
 
 // production error handler

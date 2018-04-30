@@ -47,5 +47,22 @@ describe('API endpoint /', () => {
         done();
       });
   });
+
+
+  // GET - Invalid path
+  it('should return Not Found', (done) => {
+    chai.request(app)
+      .get('/INVALID_PATH')
+      // .then(function (res) {
+      //   throw new Error('Path exists!');
+      // })
+      .then((res) => {
+        throw new Error('Path exists!');
+        done();
+      })
+      .catch((err) => {
+        expect(err).to.have.status(404);
+      });
+  });
 });
 
