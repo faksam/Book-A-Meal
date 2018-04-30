@@ -3,26 +3,36 @@ import chaiHttp from 'chai-http';
 import app from '../app';
 
 // import json file
-// import meals from '../bookmeal/meals.json';
+// import meals from '../book-meal/meals.json';
 
 
-// const expect = chai.expect;
+// const { expect } = chai.expect;
 // const expect = chai.expect;
 
 chai.use(chaiHttp);
 
-const meal = {
-  id: '3',
-  name: 'Pounded Yam',
-  description: 'Trust me I know how to make pounded yam, but no time',
-  price: 1500,
-  categories: 'Breakfast, Lunch, Dinner',
+const order = {
+  id: '2',
+  meal: [
+    {
+      id: 1,
+      name: 'Fried Rice & CHicken',
+      description: 'Dem Fry Rice with groundnut oil and put plenty maggi, abeggi I no know',
+      price: 1500,
+      categories: 'Breakfast, Lunch, Dinner',
+      status: 'Ready',
+      pictures: 'fried_rice.jpg',
+      caterer_id: '123456qwerty'
+    }
+  ],
+  meal_quantity: 2,
+  customer_id: 2,
+  date: '20-04-2018',
   status: 'Ready',
-  pictures: 'fried_rice.jpg',
-  caterer_id: '123456qwerty'
+  price: 3000
 };
 
-describe('API endpoint /meals', () => {
+describe('API endpoint /orders', () => {
   // this.timeout(5000); // How long to wait for a response (ms)
 
   before(() => {
@@ -33,32 +43,32 @@ describe('API endpoint /meals', () => {
 
   });
 
-  // GET  List all meals
-  it('it should return all meals', (done) => {
+  // GET - List all orders
+  it('it should return all orders', (done) => {
     chai.request(app)
-      .get('/api/v1/meals')
+      .get('/api/v1/orders')
       .then((res) => {
         expect(res).to.have.status(200);
-        // expect(res).to.be.json;
+        // //expect(res).to.be.json;
         expect(res.body).to.be.an('object');
-        expect(res.body.meals).to.be.an('array');
+        expect(res.body.orders).to.be.an('array');
         done();
       });
   });
-  // GET  a meal
-  it('it should return a meal by the given id', (done) => {
+  // GET - a order
+  it('it should return a order by the given id', (done) => {
     chai.request(app)
-      .get('/api/v1/meals/1')
+      .get('/api/v1/orders/1')
       .then((res) => {
         expect(res).to.have.status(200);
-        // expect(res).to.be.json;
+        // //expect(res).to.be.json;
         expect(res.body).to.be.an('object');
-        // expect(res.body.meals).to.be.an('array');
+        // expect(res.body.orders).to.be.an('array');
         done();
       });
   });
 
-  // GET  Invalid path
+  // GET - Invalid path
   // it('it should return Not Found', () => chai.request(app)
   //   .get('/INVALID_PATH')
   //   .then((res) => {
@@ -69,55 +79,54 @@ describe('API endpoint /meals', () => {
   //     expect(err).to.have.status(404);
   //   }));
 
-  // POST  Add new meal
-  it('it should add new meal', (done) => {
+  // POST - Add new order
+  it('it should add new order', (done) => {
     chai.request(app)
-      .post('/api/v1/meals')
-      .send(meal)
+      .post('/api/v1/orders')
+      .send(order)
       .then((res) => {
         expect(res).to.have.status(201);
-        // expect(res).to.be.json;
+        // //expect(res).to.be.json;
         expect(res.body).to.be.an('object');
         // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
         done();
       });
   });
 
-  // PUT  Update specific meal/3 by id
-  it('it should update meal/3', (done) => {
+  // PUT - Update specific order/3 by id
+  it('it should update order/3', (done) => {
     chai.request(app)
-      .put('/api/v1/meals/3')
-      .send(meal)
+      .put('/api/v1/orders/3')
+      .send(order)
       .then((res) => {
         expect(res).to.have.status(200);
-        // expect(res).to.be.json;
+        // //expect(res).to.be.json;
         expect(res.body).to.be.an('object');
         // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
         done();
       });
   });
 
-  // Delete  Delete specific meal/3 by id
-  it('it should delete meal/3', (done) => {
+  // Delete - Delete specific order/3 by id
+  it('it should delete order/3', (done) => {
     chai.request(app)
-      .delete('/api/v1/meals/3')
-      .send(meal)
+      .delete('/api/v1/orders/:3')
+      .send(order)
       .then((res) => {
         expect(res).to.have.status(200);
-        // expect(res).to.be.json;
+        // //expect(res).to.be.json;
         expect(res.body).to.be.an('object');
         // expect(res.body.results).to.be.an('array').that.includes('YELLOW');
         done();
       });
   });
-
-  // // POST  Bad Request
+  // // POST - Bad Request
   // it('should return Bad Request', function () {
   //    return chai.request(app)
-  //        .post('/meals')
+  //        .post('/orders')
   //        .type('form')
   //        .send({
-  //            meal: 'YELLOW'
+  //            order: 'YELLOW'
   //        })
   //        .then(function (res) {
   //            throw new Error('Invalid content type!');
