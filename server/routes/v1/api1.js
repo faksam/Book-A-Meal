@@ -1,9 +1,7 @@
 import express from 'express';
-import mealsRoute from './meals';
-import ordersRoute from './orders';
+import menuRoute from './menu';
 
 const app = express.Router();
-ordersRoute(app);
-mealsRoute(app);
+menuRoute(app);
 
 module.exports = app;
