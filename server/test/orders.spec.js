@@ -21,7 +21,7 @@ const order = {
       price: 1500,
       categories: 'Breakfast, Lunch, Dinner',
       status: 'Ready',
-      pictures: "fried_rice.jpg",
+      pictures: 'fried_rice.jpg',
       caterer_id: '123456qwerty'
     }
   ],
@@ -110,7 +110,7 @@ describe('API endpoint /orders', () => {
   // Delete - Delete specific order/3 by id
   it('it should delete order/3', (done) => {
     chai.request(app)
-      .delete('/api/v1/orders/3')
+      .delete('/api/v1/orders/:3')
       .send(order)
       .then((res) => {
         expect(res).to.have.status(200);

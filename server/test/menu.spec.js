@@ -12,7 +12,7 @@ import app from '../app';
 chai.use(chaiHttp);
 
 const menuItem = {
-  id: '2',
+  id: 2,
   date: '21-04-2018',
   meals: [
     {

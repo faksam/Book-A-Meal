@@ -1,5 +1,5 @@
 import chai, { expect } from 'chai';
-import chaiHttp from 'chaihttp';
+import chaiHttp from 'chai-http';
 import app from '../app';
 
 // import json file
@@ -18,7 +18,7 @@ const meal = {
   price: 1500,
   categories: 'Breakfast, Lunch, Dinner',
   status: 'Ready',
-  pictures: "fried_rice.jpg",
+  pictures: 'fried_rice.jpg',
   caterer_id: '123456qwerty'
 };
 

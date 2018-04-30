@@ -35,7 +35,7 @@ function getMenuItem(req, res) {
 function deleteMenu(req, res) {
   let count = 0;
   menu.menu.forEach((element) => {
-    if (element.id === req.params.id) {
+    if (`${element.id}` === `${req.params.id}`) {
       menu.menu.splice(count, 1);
     }
     count += 1;
