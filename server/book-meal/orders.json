@@ -2,63 +2,63 @@
     "orders": [
         {
             "id": "1",
-            "meal": [
-                {
-                    "id": 1,
-                    "name": "Fried Rice & CHicken",
-                    "description": "Dem Fry Rice with groundnut oil and put plenty maggi, abeggi I no know",
-                    "price": 1500,
-                    "categories": "Breakfast, Lunch, Dinner",
-                    "status": "Ready",
-                    "pictures": "fried_rice.jpg",
-                    "caterer_id": "123456qwerty"
-                }
-            ],
-            "meal_quantity": 2,
-            "customer_id": 2,
             "date": "20-04-2018",
-            "status": "Ready",
-            "price": 3000
+            "customer_id": 2,
+            "meals": [
+                {
+                    "meal_id": "1",
+                    "meal_quantity": 2
+                },
+                {
+                    "meal_id": "3",
+                    "meal_quantity": 1
+                }
+            ]
         },
         {
             "id": "2",
-            "meal": [
-                {
-                    "id": 1,
-                    "name": "Fried Rice & CHicken",
-                    "description": "Dem Fry Rice with groundnut oil and put plenty maggi, abeggi I no know",
-                    "price": 1500,
-                    "categories": "Breakfast, Lunch, Dinner",
-                    "status": "Ready",
-                    "pictures": "fried_rice.jpg",
-                    "caterer_id": "123456qwerty"
-                }
-            ],
-            "meal_quantity": 2,
-            "customer_id": 2,
             "date": "20-04-2018",
-            "status": "Ready",
-            "price": 3000
+            "customer_id": 2,
+            "meals": [
+                {
+                    "meal_id": "1",
+                    "meal_quantity": 2
+                },
+                {
+                    "meal_id": "3",
+                    "meal_quantity": 1
+                }
+            ]
         },
         {
             "id": "3",
-            "meal": [
-                {
-                    "id": 1,
-                    "name": "Fried Rice & CHicken",
-                    "description": "Dem Fry Rice with groundnut oil and put plenty maggi, abeggi I no know",
-                    "price": 1500,
-                    "categories": "Breakfast, Lunch, Dinner",
-                    "status": "Ready",
-                    "pictures": "fried_rice.jpg",
-                    "caterer_id": "123456qwerty"
-                }
-            ],
-            "meal_quantity": 2,
-            "customer_id": 2,
             "date": "20-04-2018",
-            "status": "Ready",
-            "price": 3000
+            "customer_id": 2,
+            "meals": [
+                {
+                    "meal_id": "1",
+                    "meal_quantity": 2
+                },
+                {
+                    "meal_id": "3",
+                    "meal_quantity": 1
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "date": "05-05-2018",
+            "customer_id": 2,
+            "meals": [
+                {
+                    "meal_id": "1",
+                    "meal_quantity": 2
+                },
+                {
+                    "meal_id": "3",
+                    "meal_quantity": 1
+                }
+            ]
         }
     ]
 }

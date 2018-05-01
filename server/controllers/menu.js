@@ -1,61 +1,69 @@
 // import json file
 import menu from '../book-meal/menu.json';
 
-
 /*
- * GET /meal route to retrieve all the menu.
+ * GET /menu route to retrieve all the menu.
  */
 function getMenu(req, res) {
-  res.send(menu);
+  if (req.query.date === '' || req.query.date == null) {
+    return res.status(404).send('please select a date!');
+  }
+  function findMenu(menuItem) {
+    const menuItemDate = new Date(menuItem.date);
+    const queryDate = new Date(req.query.date);
+    if (menuItemDate.getTime() === queryDate.getTime()) {
+      return res.status(200).send(menuItem);
+    }
+  }
+
+  menu.menu.find(findMenu);
 }
 
 /*
- * POST /meal to save a new meal.
+ * POST /menu route to add a new meal(s) to a specific day's menu.
  */
 function postMenu(req, res) {
-  menu.menu.push(req.body);
-
-  res.status(201).send(menu);
-}
-
-/*
- * GET /menu/:id route to retrieve a menu given its id.
- */
-function getMenuItem(req, res) {
-  function findMenu(menuItem) {
-    return menuItem.id === req.params.id;
+  let dayMenu = {};
+  const today = new Date();
+  if (req.body.date === '' || req.body.date == null) {
+    return res.status(400).send('please select a date!');
   }
-  res.send(menu.menu.find(findMenu));
-}
-
-
-/*
- * DELETE /meal/:id to delete a meal given its id.
- */
-function deleteMenu(req, res) {
-  let count = 0;
-  menu.menu.forEach((element) => {
-    if (element.id === req.params.id) {
-      menu.menu.splice(count, 1);
+  if (req.body.date !== '' && req.body.date != null) {
+    const requestDate = new Date(req.body.date);
+    if (requestDate.getTime() < today.getTime()) {
+      return res.status(400).send('date selcted cannot be before current date!');
     }
-    count += 1;
-  });
-  res.send(menu);
+  }
+  if (req.body.meal === '' || req.body.meal == null) {
+    return res.status(400).send('please select a meal!');
+  }
+  function findMenu(menuItem) {
+    const menuItemDate = new Date(menuItem.date);
+    const queryDate = new Date(req.body.date);
+    if (menuItemDate.getTime() === queryDate.getTime()) {
+      if (menuItem.meals.indexOf(parseInt(req.body.meal, 10)) === -1) {
+        menuItem.meals.push(parseInt(req.body.meal, 10));
+      }
+      return menuItem;
+    }
+  }
+
+  dayMenu = menu.menu.find(findMenu);
+
+  if (dayMenu === undefined) {
+    dayMenu = {};
+    dayMenu.id = menu.menu.length + 1;
+    dayMenu.date = req.body.date;
+    dayMenu.meals = [parseInt(req.body.meal, 10)];
+    menu.menu.push(dayMenu);
+    res.status(201).send(dayMenu);
+  } else {
+    res.status(201).send(dayMenu);
+  }
 }
 
-/*
- * PUT /meal/:id to updatea a meal given its id
- */
-function updateMenu(req, res) {
-  menu.menu.forEach((element, index) => {
-    if (element.id === req.params.id) {
-      menu.menu[index] = req.body;
-    }
-  });
-  res.send(menu);
-}
 
 // export all the functions
 module.exports = {
-  getMenu, postMenu, getMenuItem, deleteMenu, updateMenu
+  getMenu, postMenu
 };

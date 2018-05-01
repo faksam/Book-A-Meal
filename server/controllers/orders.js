@@ -1,6 +1,5 @@
 // import json file
 import orders from '../book-meal/orders.json';
-
 /*
  * GET /meal route to retrieve all the orders.
  */
@@ -12,48 +11,68 @@ function getOrders(req, res) {
  * POST /orders to save a new order.
  */
 function postOrder(req, res) {
-  orders.orders.push(req.body);
-
-  res.status(201).send(orders);
-}
-
-/*
- * GET /meal/:id route to retrieve a meal given its id.
- */
-function getOrder(req, res) {
-  function findOrder(meal) {
-    return meal.id === req.params.id;
-  }
-  res.send(orders.orders.find(findOrder));
-}
-
-/*
- * DELETE /meal/:id to delete a meal given its id.
- */
-function deleteOrder(req, res) {
-  let count = 0;
-  orders.orders.forEach((element) => {
-    if (element.id === req.params.id) {
-      orders.orders.splice(count, 1);
+  const newOrder = {};
+  const today = new Date();
+  if (req.body.date !== '' && req.body.date != null) {
+    const requestDate = new Date(req.body.date);
+    if (requestDate.getTime() < today.getTime()) {
+      return res.status(400).send('date selcted cannot be before current date!');
     }
-    count += 1;
-  });
-  res.send(orders);
+  }
+  if (req.body.meal === '' || req.body.meal == null) {
+    return res.status(400).send('please select a meal!');
+  }
+  if (req.body.quantity === '' || req.body.quantity == null) {
+    return res.status(400).send('please select a quantity!');
+  }
+  newOrder.id = `${orders.orders.length + 1}`;
+  newOrder.date = req.body.date;
+  newOrder.customer_id = 2;
+  newOrder.meals = [];
+  const newMeal = {};
+
+  newMeal.meal_id = parseInt(req.body.meal, 10);
+  newMeal.meal_quantity = parseInt(req.body.quantity, 10);
+
+  newOrder.meals.push(newMeal);
+  orders.orders.push(newOrder);
+
+  res.status(201).send(newOrder);
 }
 
 /*
  * PUT /meal/:id to updatea a meal given its id
  */
 function updateOrder(req, res) {
+  let mealChecker = false;
   orders.orders.forEach((element, index) => {
     if (element.id === req.params.id) {
-      orders.orders[index] = req.body;
+      if (req.body.meal !== '' && req.body.quantity !== '') {
+        // check for meal in meals and update quantity
+        element.meals.forEach((orderElement) => {
+          if (orderElement.meal_id === req.body.meal) {
+            mealChecker = true;
+
+            // meals.meals[index] = req.body;
+
+            orderElement.meal_quantity = req.body.quantity;
+          }
+        });
+      }
+      orders.orders[index] = element;
+      return res.send(element);
     }
   });
-  res.send(orders);
+  // if meal is not found
+      
+  // if (mealChecker) {
+    
+  // }
+  // else 
+  //   res.status(404).send(orders.orders);
 }
 
 // export all the functions
 module.exports = {
-  getOrders, postOrder, getOrder, deleteOrder, updateOrder
+  getOrders, postOrder, updateOrder
 };
