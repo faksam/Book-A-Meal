@@ -1,0 +1,9 @@
+{
+    "name": "Fufu and Egusi",
+    "description": "Dem Fry Egusi with groundnut oil and put plenty maggi, abeggi I no know",
+    "price": 1000,
+    "category": "Breakfast, Lunch, Dinner",
+    "status": "Ready",
+    "pictures": "fufu_egusi.jpg",
+    "caterer_id": "123456qwerty"
+}
