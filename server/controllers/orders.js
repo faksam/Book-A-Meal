@@ -13,7 +13,9 @@ function getOrders(req, res) {
 function postOrder(req, res) {
   const newOrder = {};
   const today = new Date();
-  if (req.body.date !== '' && req.body.date != null) {
+  if (req.body.date === '' || req.body.date == null) {
+    return res.status(400).send('please select a date!');
+  } else if (req.body.date !== '' && req.body.date != null) {
     const requestDate = new Date(req.body.date);
     if (requestDate.getTime() < today.getTime()) {
       return res.status(400).send('date selcted cannot be before current date!');
@@ -73,7 +75,7 @@ function postOrder(req, res) {
 
 function updateOrder(req, res) {
   if (req.body.meal === '' || req.body.quantity === '') {
-    return res.status(400).send('meal id and quantity are required!');
+    // return res.status(400).send('meal id and quantity are required!');
   }
   orders.orders.forEach((element, index) => {
     if (element.id === req.params.id) {
@@ -81,11 +83,12 @@ function updateOrder(req, res) {
         if (orderElement.meal_id === req.body.meal) {
           orderElement.meal_quantity = req.body.quantity;
           orders.orders[index] = element;
-          return res.status(200).send(element);
+          // return res.status(200).send(element);
         }
       });
     }
   });
+  res.status(200).send(orders);
 }
 
 // export all the functions
