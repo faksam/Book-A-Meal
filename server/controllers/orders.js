@@ -43,33 +43,49 @@ function postOrder(req, res) {
 /*
  * PUT /meal/:id to updatea a meal given its id
  */
+// function updateOrder(req, res) {
+//   orders.orders.forEach((element, index) => {
+//     if (element.id === req.params.id) {
+//       if (req.body.meal !== '' && req.body.quantity !== '') {
+//         // check for meal in meals and update quantity
+//         element.meals.forEach((orderElement) => {
+//           if (orderElement.meal_id === req.body.meal) {
+//             // meals.meals[index] = req.body;
+
+//             orderElement.meal_quantity = req.body.quantity;
+//           }
+//         });
+//         orders.orders[index] = element;
+//         res.send(element);
+//       } else {
+//         res.status(400).send('meal id and quantity are required!');
+//       }
+//     }
+//   });
+//   // if meal is not found
+
+//   // if (mealChecker) {
+
+//   // }
+//   // else
+//   //   res.status(404).send(orders.orders);
+// }
+
 function updateOrder(req, res) {
-  let mealChecker = false;
+  if (req.body.meal === '' || req.body.quantity === '') {
+    return res.status(400).send('meal id and quantity are required!');
+  }
   orders.orders.forEach((element, index) => {
     if (element.id === req.params.id) {
-      if (req.body.meal !== '' && req.body.quantity !== '') {
-        // check for meal in meals and update quantity
-        element.meals.forEach((orderElement) => {
-          if (orderElement.meal_id === req.body.meal) {
-            mealChecker = true;
-
-            // meals.meals[index] = req.body;
-
-            orderElement.meal_quantity = req.body.quantity;
-          }
-        });
-      }
-      orders.orders[index] = element;
-      return res.send(element);
+      element.meals.forEach((orderElement) => {
+        if (orderElement.meal_id === req.body.meal) {
+          orderElement.meal_quantity = req.body.quantity;
+          orders.orders[index] = element;
+          return res.status(200).send(element);
+        }
+      });
     }
   });
-  // if meal is not found
-      
-  // if (mealChecker) {
-    
-  // }
-  // else 
-  //   res.status(404).send(orders.orders);
 }
 
 // export all the functions
