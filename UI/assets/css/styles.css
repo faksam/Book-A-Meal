@@ -83,8 +83,8 @@ input, textarea, select, button {
   text-shadow: #CB3438;
   color: #fff;
   margin: 0;
-  position: absolute;
-  top: 25%;
+  position: relative;
+  top: 35%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -96,8 +96,8 @@ input, textarea, select, button {
   font-size: 10px;
   color: #fff;
   margin: 0;
-  position: absolute;
-  top: 30%;
+  position: relative;
+  top: 37%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -271,8 +271,8 @@ nav a.active {
     text-shadow: #CB3438;
     color: #fff;
     margin: 0;
-    position: absolute;
-    top: 30%;
+    position: relative;
+    top: 40%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
@@ -285,8 +285,8 @@ nav a.active {
     font-size: 10px;
     color: #fff; 
     margin: 0;
-    position: absolute;
-    top: 33%;
+    position: relative;
+    top: 37%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
