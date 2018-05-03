@@ -20,7 +20,7 @@ describe('API endpoint /meals', () => {
       });
   });
   // GET  a meal
-  it('it should return a meal by the given id', (done) => {
+  it('it should return error Not', (done) => {
     chai.request(app)
       .get('/api/v1/meals/1')
       .then((res) => {
@@ -29,6 +29,16 @@ describe('API endpoint /meals', () => {
         done();
       });
   });
+  // // GET unavailable meal
+  // it('it should return a meal by the given id', (done) => {
+  //   chai.request(app)
+  //     .get('/api/v1/meals/20')
+  //     .then((res) => {
+  //       expect(res).to.have.status(404);
+  //       //expect(res.body).to.be.an('object');
+  //       done();
+  //     });
+  // });
 
   // POST  Add new meal
   it('it should add new meal', (done) => {
@@ -46,7 +56,7 @@ describe('API endpoint /meals', () => {
   it('it should update meal/3', (done) => {
     chai.request(app)
       .put('/api/v1/meals/3')
-      .send(meal.meal)
+      .send(meal)
       .then((res) => {
         expect(res).to.have.status(200);
         expect(res.body).to.be.an('object');
