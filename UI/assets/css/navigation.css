@@ -35,10 +35,10 @@ nav ul li {
   float: left;
   position: relative;
 }
-nav ul li.signUp {
+/* nav ul li.signUp {
   color: #fff;
-  background-color: rgb(164, 60, 64);
-}
+  background-color: #CB3438;
+} */
 nav ul li a,
 nav ul li a:visited {
   display: block;
@@ -52,6 +52,7 @@ nav ul li a:visited {
 nav ul li a:hover,
 nav ul li a:visited:hover {
   background: #CB3438;
+  font-weight: bold;
   color: #fff;
 }
 nav ul li a:hover,
