@@ -9,9 +9,10 @@ html {
 body {
    margin: 0; 
    min-height: 100%;
+   position: relative;
 }
 body, input[text], button {
-  color: #888;
+  color: rgb(40, 40, 40);
   font-family: Cambria, Georgia;
 }
 input, textarea, select, button {
@@ -20,6 +21,13 @@ input, textarea, select, button {
   font-size: 1em;
   padding-left: .4em;
 }
+.main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; /* height of your footer */
+ }
 .container {
   margin: 0 auto;
   padding: 0 10px;
@@ -64,29 +72,35 @@ input, textarea, select, button {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.main_title
-{
+
+
+/**/
+.main_title {
   font-family: 'Brandon', sans-serif;
   text-transform: uppercase;
   letter-spacing: 6px;
   font-size: 15px;
   text-shadow: #CB3438;
   color: #fff;
-  margin-bottom: 11px;
+  margin: 0;
   position: relative;
+  top: 35%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
-.main_tagline
-{
+.main_tagline {
   font-family: 'Brandon', sans-serif;
   text-transform: uppercase;
   letter-spacing: 6px;
   font-size: 10px;
   color: #fff;
-  margin-bottom: 11px;  
-}
-.title_container
-{
-  padding-top: 80px;
+  margin: 0;
+  position: relative;
+  top: 37%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 img {
   max-width: 100%;
@@ -110,15 +124,16 @@ a {
 }
 button {
   font-family: Arial;
-  background-color: #eee;
+  background-color: rgb(99, 125, 193);
+  color: #fff;
   border: none;
-  padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
 }
 button:hover {
-  background-color: #cfd8dc;
+  background-color: #4CAF50;
+  font-weight: bold;
 }
 button:disabled {
   background-color: #eee;
@@ -191,9 +206,8 @@ nav a.active {
   color: white;
   text-align: center;
   clear: both;
-  position: relative;
+  position: absolute;
   z-index: 10;
-  height: 100%;
   margin-top: -3em;
 }
 /* 
@@ -257,19 +271,45 @@ nav a.active {
     font-size: 35px;
     text-shadow: #CB3438;
     color: #fff;
-    margin-bottom: 11px;
+    margin: 0;
     position: relative;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
   }
   .main_tagline
   {
     font-family: 'Brandon', sans-serif;
     text-transform: uppercase;
     letter-spacing: 6px;
-    font-size: 15px;
-    color: #fff;
-    margin-bottom: 11px;  
+    font-size: 10px;
+    color: #fff; 
+    margin: 0;
+    position: relative;
+    top: 37%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
   }
 }
+
+
+@media only screen and (min-width: 1200px) {
+  .card_image
+  {
+    position: relative;
+    float: left;
+    width:  100%;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    overflow: hidden;
+  }
+}
+
+
 
 /* The Modal (background) */
 .modal {
@@ -346,7 +386,7 @@ nav a.active {
   background: #fff;
   padding: 10px;
   /* border-top: 3px solid #CB3438; */
-  border-top: 1px solid ;
+  border: 1px solid rgb(160, 160, 160);
   box-shadow: 0 2px 6px 0 hsla(0,0%,0%,0.2);
   border-radius: 5px;
 }
@@ -359,6 +399,14 @@ nav a.active {
 .card_content
 {
   /**/
+  padding-top: 15px;
+}
+.card_content a button
+{
+  border: 2px solid rgb(99, 125, 193);
+  /**/
+  background-color: rgb(99, 125, 193);
+  color: #ffffff;
 }
 .card_content a button:hover
 {
@@ -373,10 +421,6 @@ nav a.active {
   /**/
   background-color: #CB3438;
   color: #ffffff;
-}
-.card_image
-{
-  /* */
 }
 
 table {
@@ -393,4 +437,14 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+.footer .row p a {
+  color: rgb(206, 173, 174);
+}
+.footer .row p a:hover {
+  border: 2px solid rgb(198, 58, 63);
+  /**/
+  font-weight: bold;
+  background-color: rgb(198, 58, 63);
+  color: #ffffff;
 }

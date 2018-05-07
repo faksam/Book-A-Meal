@@ -1,97 +1,68 @@
-// import json file
-import orders from '../book-meal/orders.json';
-/*
- * GET /meal route to retrieve all the orders.
- */
-function getOrders(req, res) {
-  res.send(orders);
-}
+const Order = require('../models').Order;
+const OrderDetail = require('../models').OrderDetail;
 
-/*
- * POST /orders to save a new order.
- */
-function postOrder(req, res) {
-  const newOrder = {};
-  const today = new Date();
-  if (req.body.date === '' || req.body.date == null) {
-    return res.status(400).send('please select a date!');
-  } else if (req.body.date !== '' && req.body.date != null) {
-    const requestDate = new Date(req.body.date);
-    if (requestDate.getTime() < today.getTime()) {
-      return res.status(400).send('date selcted cannot be before current date!');
+export default class mealsController {
+    static create(req, res) {
+        return Order
+            .create({
+                date: req.body.date,
+                customerId: 1
+            })
+            .then(order => {
+                //console.log(order);
+                return OrderDetail
+                    .create({
+                        orderId: order.id,
+                        mealId: req.body.meal,
+                        quantity: req.body.quantity
+                    })
+                    .then((orderDetail) => {
+                        res.status(201).send({OrderDetail: orderDetail,Order: order})
+                    })
+                    .catch(error => res.status(400).send(error.message));
+            })
+            .catch(error => res.status(400).send(error));
     }
-  }
-  if (req.body.meal === '' || req.body.meal == null) {
-    return res.status(400).send('please select a meal!');
-  }
-  if (req.body.quantity === '' || req.body.quantity == null) {
-    return res.status(400).send('please select a quantity!');
-  }
-  newOrder.id = `${orders.orders.length + 1}`;
-  newOrder.date = req.body.date;
-  newOrder.customer_id = 2;
-  newOrder.meals = [];
-  const newMeal = {};
-
-  newMeal.meal_id = parseInt(req.body.meal, 10);
-  newMeal.meal_quantity = parseInt(req.body.quantity, 10);
-
-  newOrder.meals.push(newMeal);
-  orders.orders.push(newOrder);
-
-  res.status(201).send(newOrder);
-}
-
-/*
- * PUT /meal/:id to updatea a meal given its id
- */
-// function updateOrder(req, res) {
-//   orders.orders.forEach((element, index) => {
-//     if (element.id === req.params.id) {
-//       if (req.body.meal !== '' && req.body.quantity !== '') {
-//         // check for meal in meals and update quantity
-//         element.meals.forEach((orderElement) => {
-//           if (orderElement.meal_id === req.body.meal) {
-//             // meals.meals[index] = req.body;
-
-//             orderElement.meal_quantity = req.body.quantity;
-//           }
-//         });
-//         orders.orders[index] = element;
-//         res.send(element);
-//       } else {
-//         res.status(400).send('meal id and quantity are required!');
-//       }
-//     }
-//   });
-//   // if meal is not found
-
-//   // if (mealChecker) {
-
-//   // }
-//   // else
-//   //   res.status(404).send(orders.orders);
-// }
-
-function updateOrder(req, res) {
-  if (req.body.meal === '' || req.body.quantity === '') {
-    // return res.status(400).send('meal id and quantity are required!');
-  }
-  orders.orders.forEach((element, index) => {
-    if (element.id === req.params.id) {
-      element.meals.forEach((orderElement) => {
-        if (orderElement.meal_id === req.body.meal) {
-          orderElement.meal_quantity = req.body.quantity;
-          orders.orders[index] = element;
-          // return res.status(200).send(element);
-        }
-      });
+    static list(req, res) {
+        return Order
+            .all()
+            .then(order => res.status(200).send({order}))
+            .catch(error => res.status(400).send(error));
     }
-  });
-  res.status(200).send(orders);
-}
+    static update(req, res) {
 
-// export all the functions
-module.exports = {
-  getOrders, postOrder, updateOrder
+        OrderDetail.update({
+            quantity: parseInt(req.body.quantity),
+            mealId: parseInt(req.body.meal)
+        },
+            {
+
+                where: {
+                    orderId: req.params.id
+                }
+            })
+            .then(() => {
+                return OrderDetail
+                    .findAll({
+                        where: {
+                            orderId: req.params.id
+                        }
+                    })
+                    .then((orderDetail) => {
+                        console.log("in then")
+                        console.log(orderDetail)
+                        res.status(200).send({orderDetail})
+                    })
+                    .catch((error) => {
+                        console.log("in catch")
+                        console.log(error)
+                        res.status(400).send(error)
+                    });
+            })
+            .catch((error) => {
+                console.log("in catch")
+                console.log(error)
+                res.status(400).send(error)
+            });
+    }
 };

@@ -1,6 +1,7 @@
-import menuCtrl from '../../controllers/menu';
+import menuCtrl from '../../controllers/v1/menu';
+import { verifyMenuInput, verifyMenuGetInput } from '../../helpers/validator';
 
 module.exports = (app) => {
-  app.route('/menu/').get(menuCtrl.getMenu);
-  app.route('/menu').post(menuCtrl.postMenu);
+  app.post('/menu', verifyMenuInput, menuCtrl.postMenu);
+  app.get('/menu', verifyMenuGetInput, menuCtrl.getMenu);
 };

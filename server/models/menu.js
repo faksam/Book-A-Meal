@@ -1,10 +1,21 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Menu = sequelize.define('Menu', {
-    title: DataTypes.STRING
-  }, {});
+  const Menu = sequelize.define('Menu', {
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  });
   Menu.associate = function(models) {
     // associations can be defined here
+    Menu.hasMany(models.MenuDetail, {
+      foreignKey: 'menuDetailsId',
+      as: 'menuDetails',
+    });
   };
   return Menu;
 };

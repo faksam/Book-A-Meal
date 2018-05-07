@@ -1,9 +1,10 @@
-import mealsCtrl from '../../controllers/meals';
+import mealsCtrl from '../../controllers/v1/meals';
+import { verifyMealInput } from '../../helpers/validator';
 
 module.exports = (app) => {
-  app.route('/meals').get(mealsCtrl.getMeals);
-  app.route('/meals').post(mealsCtrl.postMeal);
-  app.route('/meals/:id').get(mealsCtrl.getMeal);
-  app.route('/meals/:id').delete(mealsCtrl.deleteMeal);
-  app.route('/meals/:id').put(mealsCtrl.updateMeal);
+  app.post('/meals', verifyMealInput, mealsCtrl.postMeal);
+  app.get('/meals', mealsCtrl.getMeals);
+  app.get('/meals/:id', mealsCtrl.getMeal);
+  app.delete('/meals/:id', mealsCtrl.deleteMeal);
+  app.put('/meals/:id', verifyMealInput, mealsCtrl.updateMeal);
 };
