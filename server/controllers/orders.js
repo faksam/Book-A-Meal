@@ -15,7 +15,7 @@ export default class ordersController {
   static postOrder(req, res) {
     const newOrder = {};
 
-    newOrder.id = `${orders.orders.length + 1}`;
+    newOrder.id = orders.orders.length + 1;
     newOrder.date = req.body.date;
     newOrder.customer_id = 2;
     newOrder.meals = [];
@@ -37,12 +37,17 @@ export default class ordersController {
     if (req.body.meal === '' || req.body.quantity === '') {
       // return res.status(400).send('meal id and quantity are required!');
     }
+    console.log("update");
+    console.log(req.params);
     orders.orders.forEach((element, index) => {
+      console.log(element);
       if (element.id === req.params.id) {
-        element.meals.forEach((orderElement) => {
+        console.log("in element")
+        element.meals.forEach((orderElement, orderIndex) => {
           if (orderElement.meal_id === req.body.meal) {
             orderElement.meal_quantity = req.body.quantity;
-            orders.orders[index] = element;
+            //orders.orders[index] = element;
+            //element[index] = orderElement;
             // return res.status(200).send(element);
           }
         });
