@@ -26,7 +26,7 @@ $(document).ready(() => {
 
   // Get the button that opens the modal
   // Get signupModal
-  const signUpModal = document.getElementById('signupModal');
+  const signUpModal = document.getElementById('0signupModal');
   // Get the signinModal
   const signInModal = document.getElementById('signinModal');
   // Get the catererSigninModal
@@ -60,9 +60,9 @@ $(document).ready(() => {
     };
 
     // When the user clicks the button, open the modal
-    catererSigninBtn.onclick = function () {
-      catererSigninModal.style.display = 'block';
-    };
+    // catererSigninBtn.onclick = function () {
+    //   catererSigninModal.style.display = 'block';
+    // };
     if (signUpSpan != null || signInSpan != null || catererSignInSpan != null) {
       // When the user clicks on <span> (x), close the modal
       signUpSpan.onclick = function () {
@@ -71,9 +71,9 @@ $(document).ready(() => {
       signInSpan.onclick = function () {
         signInModal.style.display = 'none';
       };
-      catererSignInSpan.onclick = function () {
-        catererSigninModal.style.display = 'none';
-      };
+      // catererSignInSpan.onclick = function () {
+      //   catererSigninModal.style.display = 'none';
+      // };
     }
 
     // When the user clicks anywhere outside of the modal, close it
@@ -82,9 +82,10 @@ $(document).ready(() => {
         signUpModal.style.display = 'none';
       } else if (event.target === signInModal) {
         signInModal.style.display = 'none';
-      } else if (event.target === catererSigninModal) {
-        catererSigninModal.style.display = 'none';
-      }
+      } 
+      // else if (event.target === catererSigninModal) {
+      //   catererSigninModal.style.display = 'none';
+      // }
     };
   }
 }); // end DOM ready
