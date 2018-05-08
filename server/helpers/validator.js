@@ -6,6 +6,8 @@ export const verifyMenuInput = (req, res, next) => {
   let errorChecker = false;
   const error = {};
   const today = new Date();
+  today.setHours(0,0,0,0);
+  console.log(date);
 
   if (date === '' || date == null) {
     errorChecker = true;
@@ -18,6 +20,8 @@ export const verifyMenuInput = (req, res, next) => {
   if (date !== '' && date != null) {
     const requestDate = new Date(date);
     if (requestDate.getTime() < today.getTime()) {
+      console.log(requestDate.getTime());
+      console.log(today.getTime());
       errorChecker = true;
       error.date = 'date selcted cannot be before current date!';
     }
@@ -28,9 +32,29 @@ export const verifyMenuInput = (req, res, next) => {
   return res.status(400).json({ error });
 };
 
+export const verifyMenuGetInput = (req, res, next) => {
+  const {
+    date
+  } = req.query;
+
+  let errorChecker = false;
+  const error = {};
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  console.log(date);
+
+  if (date === '' || date == null) {
+    errorChecker = true;
+    error.date = 'please select a date!';
+  }
+
+  if (!errorChecker) { return next(); }
+
+  return res.status(400).json({ error });
+};
 export const verifyMealInput = (req, res, next) => {
   const {
-    name, description, price, category, status, pictures
+    name, description, price, category, status, picture
   } = req.body;
 
   let errorChecker = false;
@@ -56,9 +80,9 @@ export const verifyMealInput = (req, res, next) => {
     errorChecker = true;
     error.status = 'status field is required';
   }
-  if (pictures === '' || pictures == null) {
+  if (picture === '' || picture == null) {
     errorChecker = true;
-    error.pictures = 'a picture must be uploaded';
+    error.picture = 'a picture must be uploaded';
   }
 
   if (!errorChecker) { return next(); }
@@ -74,6 +98,7 @@ export const verifyOrderInput = (req, res, next) => {
   let errorChecker = false;
   const error = {};
   const today = new Date();
+  today.setHours(0,0,0,0);
   if (date === '' || date == null) {
     errorChecker = true;
     error.date = 'please select a date!';

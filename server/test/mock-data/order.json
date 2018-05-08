@@ -1,7 +1,6 @@
 {
-    "id": "2",
-    "date": "05-05-2018",
-    "customer_id": 2,
-    "meal": "1",
+    "date": "05-07-2018",
+    "customerId": 1,
+    "meal": 1,
     "quantity": 2
 }

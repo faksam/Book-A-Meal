@@ -1,4 +1,4 @@
-import ordersCtrl from '../../controllers/orders';
+import ordersCtrl from '../../controllers/v1/orders';
 import { verifyOrderInput } from '../../helpers/validator';
 
 module.exports = (app) => {

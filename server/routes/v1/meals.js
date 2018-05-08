@@ -1,4 +1,4 @@
-import mealsCtrl from '../../controllers/meals';
+import mealsCtrl from '../../controllers/v1/meals';
 import { verifyMealInput } from '../../helpers/validator';
 
 module.exports = (app) => {
