@@ -4,12 +4,10 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import apiv1 from './routes/v1/api1';
-import apiv2 from './routes/v2/api2';
-import authentication from './controllers/authentication';
 import passport from 'passport';
 import passportService from './services/passport';
 
-const requireAuth = passport.authenticate('jwt', {session: false});
+const requireAuth = passport.authenticate('jwt', { session: false });
 
 const app = express();
 
@@ -34,8 +32,6 @@ app.use(express.static(path.join(__dirname, '../UI')));
 // // Require static assets from template folder
 app.use('../UI', express.static(path.join(`${__dirname}../UI`)));
 
-app.use('/api/v2/', apiv2);
-
 app.use('/api/v1/', apiv1);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -45,7 +41,11 @@ app.use((req, res, next) => {
 // error handler
 app.use((err, req, res, next) => {
   // render the error page
-  res.status(err.status);
+  if(err.status)
+    res.status(err.status);
+  else
+    res.status(500);
+  console.log(err);
   res.render('error');
 });
 

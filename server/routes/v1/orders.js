@@ -1,8 +1,10 @@
-import ordersCtrl from '../../controllers/v1/orders';
+import ordersCtrl from '../../controllers/orders';
 import { verifyOrderInput } from '../../helpers/validator';
+import { authorizeAdmin, authorizeUser } from '../../middleware/authorize';
+
 
 module.exports = (app) => {
-  app.route('/orders').get(ordersCtrl.getOrders);
-  app.post('/orders', verifyOrderInput, ordersCtrl.postOrder);
-  app.route('/orders/:id').put(ordersCtrl.updateOrder);
+  app.post('/orders', authorizeUser, verifyOrderInput, ordersCtrl.create);
+  app.get('/orders', authorizeAdmin, ordersCtrl.list);
+  app.put('/orders/:id', authorizeUser, ordersCtrl.update);
 };

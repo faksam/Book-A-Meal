@@ -1,10 +1,10 @@
-import mealsCtrl from '../../controllers/v1/meals';
+import mealsCtrl from '../../controllers/meals';
 import { verifyMealInput } from '../../helpers/validator';
+import { authorizeAdmin } from '../../middleware/authorize';
 
 module.exports = (app) => {
-  app.post('/meals', verifyMealInput, mealsCtrl.postMeal);
-  app.get('/meals', mealsCtrl.getMeals);
-  app.get('/meals/:id', mealsCtrl.getMeal);
-  app.delete('/meals/:id', mealsCtrl.deleteMeal);
-  app.put('/meals/:id', verifyMealInput, mealsCtrl.updateMeal);
+  app.post('/meals', authorizeAdmin, verifyMealInput, mealsCtrl.create);
+  app.get('/meals', authorizeAdmin, mealsCtrl.list);
+  app.delete('/meals/:id', authorizeAdmin, mealsCtrl.destroy);
+  app.put('/meals/:id', authorizeAdmin, verifyMealInput, mealsCtrl.update);
 };

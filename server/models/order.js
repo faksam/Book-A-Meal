@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Order = sequelize.define('Order', {
     date: {
@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  Order.associate = function(models) {
+  Order.associate = function (models) {
     // associations can be defined here
     Order.belongsTo(models.User, {
       foreignKey: 'customerId',
