@@ -1,7 +1,12 @@
-import menuCtrl from '../../controllers/v1/menu';
+import menuCtrl from '../../controllers/menu';
 import { verifyMenuInput, verifyMenuGetInput } from '../../helpers/validator';
+import { authorizeAdmin, authorizeUser } from '../../middleware/authorize';
+
+const passport = require('passport');
+
+const requireSignIn = passport.authenticate('local', { session: false });
 
 module.exports = (app) => {
-  app.post('/menu', verifyMenuInput, menuCtrl.postMenu);
-  app.get('/menu', verifyMenuGetInput, menuCtrl.getMenu);
+  app.post('/menu', authorizeAdmin, verifyMenuInput, menuCtrl.create);
+  app.get('/menu', authorizeUser, verifyMenuGetInput, menuCtrl.list);
 };

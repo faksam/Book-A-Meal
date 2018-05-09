@@ -1,4 +1,6 @@
-const User = require('../models').User;
+import db from '../models';
+
+const User = db.User;
 
 export default class userController {
   static create(req, res) {
@@ -8,7 +10,7 @@ export default class userController {
         email: 'fakunlesamuel@gmail.com',
         phone_no: '07039248533',
         role: 'caterer',
-        password: "Lifeisarace"
+        password: 'Lifeisarace'
       })
       .then(user => res.status(201).send(user))
       .catch(error => res.status(400).send(error));
@@ -26,14 +28,12 @@ export default class userController {
   }
 
   static verrifyUser(email) {
-    consol.log("in Verify user"+ email)
     return User
       .findAll({
         where: {
-          email: "fakunlesamuel@gmail.com"
+          email
         }
       })
-      .then(user => res.status(201).send(user))
-      .catch(error => res.status(400).send(error));
+      .then(user => user);
   }
-};
+}

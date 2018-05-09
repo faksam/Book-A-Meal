@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Meal = sequelize.define('Meal', {
     name: {
@@ -26,12 +26,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  Meal.associate = function(models) {
+  Meal.associate = function (models) {
     // associations can be defined here
     Meal.belongsTo(models.User, {
       foreignKey: 'catererId',
       onDelete: 'CASECADE',
-    });    
+    });
     // Meal.hasMany(models.OrderDetail, {
     //   foreignKey: 'orderDetailId',
     //   as: 'orderDetail',
