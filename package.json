@@ -38,7 +38,7 @@
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "prettier": "^1.12.1",
-    "sequelize": "^4.37.6",
+    "sequelize": "^5.15.1",
     "serve-favicon": "~2.4.2"
   },
   "description": "Book-A-Meal App and it is an application that allows customers to make food orders and helps the food vendor know what the customers want to eat.",
