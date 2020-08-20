@@ -14,7 +14,7 @@
     "posttest": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
-    "bcrypt": "^2.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "~1.17.1",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
